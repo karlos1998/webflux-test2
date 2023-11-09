@@ -1,5 +1,6 @@
 package it.letscode.webfluxtest2;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -9,12 +10,10 @@ import java.util.Random;
 import java.time.Duration;
 
 @Service
+@RequiredArgsConstructor
 public class InitService {
-    private UserRepo userRepo;
 
-    public InitService(UserRepo userRepo) {
-        this.userRepo = userRepo;
-    }
+    private final UserRepo userRepo;
 
 //    @EventListener(ApplicationReadyEvent.class)
 //    public void get() {
